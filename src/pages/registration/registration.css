@@ -1,0 +1,84 @@
+.regImage {
+  width: 100%;
+  height: 1024px;
+  object-fit: cover;
+  display: block;
+}
+
+.regBox {
+  width: 497px;
+  margin-left: auto;
+  margin-right: 69px;
+  margin-top: 225px;
+}
+
+.regTitle {
+  font-family: "Nunito", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #11175d;
+  margin-bottom: 13px;
+}
+
+.regSubtitle {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+}
+
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  font-family: "Nunito", sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #11175d !important;
+}
+
+.inputMain {
+  width: 370px;
+  margin-top: 40px;
+}
+
+.regButton {
+  width: 100%;
+  font-family: "Nunito", sans-serif !important;
+  font-weight: 600 !important;
+  padding: 20px 140px 20px 120px !important;
+  background-color: #11175d !important;
+  color: #ffffff !important;
+  border-radius: 86px !important;
+  cursor: pointer !important;
+}
+
+.regErrorDesign {
+  margin-bottom: 30px;
+}
+
+.inputDiv {
+  position: relative;
+  margin-bottom: 34px;
+}
+
+.eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.css-17xq7a1-MuiLoadingButton-loadingIndicator {
+  left: 130px !important;
+}
+
+.btnDiv {
+  position: relative;
+}
+
+.logButton {
+  padding: 20px 0 !important;
+}
