@@ -2,24 +2,13 @@ import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Image from "../../components/layout/Image";
 import reg_img from "../../assets/reg_img.jpg";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { spacing } from "@mui/system";
 import Heading from "../../components/layout/Heading";
-import { FaAccessibleIcon } from "react-icons/fa";
-import { FaAcquisitionsIncorporated } from "react-icons/fa";
 import Paragraph from "../../components/layout/Paragraph";
 import TextField from "@mui/material/TextField";
 import Alert from "@mui/material/Alert";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import LoadingButton from "@mui/lab/LoadingButton";
 import { ColorRing } from "react-loader-spinner";
 import { Bounce, Zoom, toast } from "react-toastify";
 import { useNavigate, Link } from "react-router-dom";
