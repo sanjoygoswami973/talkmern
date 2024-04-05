@@ -6,7 +6,7 @@ import { FaAcquisitionsIncorporated } from "react-icons/fa";
 const Heading = (props) => {
   return props.as ? (
     props.align ? (
-      <props.as className={props.className}>
+      <props.as className={props.className} style={props.style}>
         {props.align == "left" || props.align == "both" ? (
           <span>
             <Icon iconname={props.icon} />
@@ -20,7 +20,7 @@ const Heading = (props) => {
         ) : null}
       </props.as>
     ) : (
-      <props.as className={props.className}>
+      <props.as className={props.className} style={props.style}>
         <span>
           <Icon iconname={props.icon} />
         </span>
@@ -28,7 +28,7 @@ const Heading = (props) => {
       </props.as>
     )
   ) : props.align ? (
-    <h2 className={props.className}>
+    <h2 className={props.className} style={props.style}>
       {props.align == "left" || props.align == "both" ? (
         <span>
           <Icon iconname={props.icon} />
@@ -42,7 +42,7 @@ const Heading = (props) => {
       ) : null}
     </h2>
   ) : (
-    <h2 className={props.className}>
+    <h2 className={props.className} style={props.style}>
       <span>
         <Icon iconname={props.icon} />
       </span>

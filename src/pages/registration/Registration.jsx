@@ -21,7 +21,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { ColorRing } from "react-loader-spinner";
 import { Bounce, Zoom, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const auth = getAuth();
@@ -233,6 +233,12 @@ const Registration = () => {
             >
               Sign up
             </LoadingButton> */}
+            <Paragraph className="signInPara">
+              Already have an account ?
+              <Link to="/login" className="signInLink">
+                Login
+              </Link>
+            </Paragraph>
           </div>
         </div>
       </Grid>

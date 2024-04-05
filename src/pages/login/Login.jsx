@@ -22,7 +22,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { ColorRing } from "react-loader-spinner";
 import { Bounce, Zoom, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const auth = getAuth();
@@ -171,7 +171,7 @@ const Login = () => {
                   ariaLabel="color-ring-loading"
                   wrapperStyle={{
                     position: "absolute",
-                    right: "120px",
+                    right: "80px",
                     top: "50%",
                     transform: "translateY(-50%)",
                   }}
@@ -186,6 +186,19 @@ const Login = () => {
                 />
               )}
             </div>
+            <Link
+              className="signInPara"
+              style={{ marginTop: "16px", display: "inline-block" }}
+              to="/forgotPass"
+            >
+              Forgot Password
+            </Link>
+            <Paragraph className="signInPara textLeft">
+              Don’t have an account ?
+              <Link to="/" className="signInLink">
+                Sign up
+              </Link>
+            </Paragraph>
           </div>
         </div>
       </Grid>
