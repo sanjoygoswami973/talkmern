@@ -7,11 +7,18 @@ import Heading from "../../components/layout/Heading";
 import Paragraph from "../../components/layout/Paragraph";
 import TextField from "@mui/material/TextField";
 import Alert from "@mui/material/Alert";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { ColorRing } from "react-loader-spinner";
 import { Bounce, Zoom, toast } from "react-toastify";
 import { useNavigate, Link } from "react-router-dom";
+
+import Glogin from "../../assets/googleLogin.png";
 
 const Login = () => {
   const auth = getAuth();
@@ -56,18 +63,33 @@ const Login = () => {
       signInWithEmailAndPassword(auth, regData.email, regData.password)
         .then((userCredential) => {
           setLoading(false);
-          toast.success("Login Sussessful", {
-            position: "bottom-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce,
-          });
-          navigate("/home");
+          console.log(userCredential.user.emailVerified);
+          if (!userCredential.user.emailVerified) {
+            toast.error("Please Varify Your Email First", {
+              position: "bottom-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Bounce,
+            });
+          } else {
+            toast.success("Login Sussessful", {
+              position: "bottom-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Bounce,
+            });
+            navigate("/rootlayout/home");
+          }
           console.log("usercreated", userCredential);
         })
         .catch((error) => {
@@ -96,11 +118,39 @@ const Login = () => {
     }
   };
 
+  let handleGlogin = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        toast.success("Login Sussessful", {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
+        navigate("/rootlayout/home");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <Grid container spacing={2}>
       <Grid xs={6}>
         <div className="regBox">
           <Heading as="h1" text="Login to your account!" className="regTitle" />
+          <Image
+            onClick={handleGlogin}
+            style={{ marginTop: "30px" }}
+            srcImg={Glogin}
+            altText="googleLoginImg"
+          />
 
           <div className="inputMain">
             <div className="inputDiv">

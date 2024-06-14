@@ -123,3 +123,25 @@
   padding: 50px;
   border-radius: 10px;
 }
+
+.navbox {
+  height: 100vh;
+  background: #5f34f5;
+  width: 186px;
+  border-radius: 20px;
+}
+
+.pageIcon {
+  font-size: 46px;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.profileImg {
+  display: block;
+  margin: 0 auto;
+  padding-top: 38px;
+  padding-bottom: 78px;
+}

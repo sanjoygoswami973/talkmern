@@ -74,6 +74,7 @@ const Registration = () => {
       setLoading(true);
       createUserWithEmailAndPassword(auth, regData.email, regData.password)
         .then((userCredential) => {
+          console.log(userCredential);
           setLoading(false);
           sendEmailVerification(auth.currentUser).then(() => {
             toast.success(
@@ -92,7 +93,7 @@ const Registration = () => {
             );
             navigate("./login");
           });
-          console.log("usercreated", userCredential);
+          // console.log("usercreated", userCredential);
         })
         .catch((error) => {
           toast.error("Email Already in Use", {
@@ -109,11 +110,11 @@ const Registration = () => {
           setLoading(false);
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(error);
-          console.log(error.message);
-          console.log(error.code);
+          // console.log(error);
+          // console.log(error.message);
+          // console.log(error.code);
 
-          console.log(error.message.includes("email-already-in-use"));
+          // console.log(error.message.includes("email-already-in-use"));
           if (error.message.includes("email-already-in-use")) {
             setRegError({ ...regError, email: "email already exists" });
           }
